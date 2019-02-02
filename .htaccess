@@ -1,0 +1,31 @@
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    
+    # rules for rbge
+
+    RewriteRule ^iiif/([^/]*)$           iiif/$1/manifest [R=303]
+    RewriteRule ^iiif/([^/]*)/manifest$  service/presentation_manifest.php?barcode=$1 [PT]
+    RewriteRule ^iiif/collection/([^/]*)/(.*)$  service/presentation_collection.php?genus=$1&species=$2 [PT]
+    RewriteRule ^iiif/([^/]*)/annotation$  service/presentation_manifest.php?barcode=$1 [PT]
+    RewriteRule ^iiif/([^/]*)/info\.json  service/image_info.php?barcode=$1 [PT]
+    # {scheme}://{server}{/prefix}/{identifier}/{region}/{size}/{rotation}/{quality}.{format}
+    RewriteRule ^iiif/([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)\.jpg  service/image_proxy.php?barcode=$1&region=$2&size=$3&rotation=$4&quality=$5 [PT]
+
+    # rules for cetaf id spoof iiif
+
+    RewriteRule ^cetaf_id/iiif$ cetaf_id/index.php [R=303]
+    RewriteRule ^cetaf_id/iiif/([^/]*)$                 cetaf_id/iiif/$1/manifest [R=303]
+    RewriteRule ^cetaf_id/iiif/([^/]*)/manifest$	cetaf_id/spoof_manifest.php?jpg=$1 [PT]
+    RewriteRule ^cetaf_id/iiif/([^/]*)/annotation$      cetaf_id/spoof_manifest.php?jpg=$1 [PT]
+    RewriteRule ^cetaf_id/iiif/([^/]*)/info\.json       cetaf_id/spoof_image_info.php?jpg=$1 [PT]
+    # {scheme}://{server}{/prefix}/{identifier}/{region}/{size}/{rotation}/{quality}.{format}
+    RewriteRule ^cetaf_id/iiif/([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)\.jpg  cetaf_id/spoof_image.php?jpg=$1&region=$2&size=$3&rotation=$4&quality=$5 [PT]
+
+
+</IfModule>
+

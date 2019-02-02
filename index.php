@@ -25,6 +25,10 @@
 	<li><a href="cetaf_id/index.php">CETAF ID to IIIF Mapper</a> - This is a test to see if we can map from CETAF IDs to associated IIIF end points or to spoof those endpoints if they are not available.</li>
 </ul>
 
+<p>
+	Code is available on github here: <a href="https://github.com/rogerhyam/iiif_poc">https://github.com/rogerhyam/iiif_poc</a>.
+</p>
+
 
 </body>
 </html>
