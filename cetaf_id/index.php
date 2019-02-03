@@ -59,15 +59,20 @@
 
 <p>
 <form action="mapper.php" method="GET" onsubmit="this.cetaf_uri.value = btoa(this.cetaf_uri.value)" >
-	CETAF URI: <input type="text" name="cetaf_uri"  id="cetaf_uri" width="100" /> Show in viewer: <input type="checkbox" name="viewer" value="true" /> <input type="submit" value="Get Manifest">
+	CETAF URI: <input type="text" name="cetaf_uri"  id="cetaf_uri" size="122" /> Show in viewer: <input type="checkbox" name="viewer" value="true" /> <input type="submit" value="Get Manifest">
 </form>
 </p>
 	
 <h3>Some Examples</h3>
+<p>Cut and paste into box.</p>
 <ul>
 	<li>http://data.rbge.org.uk/herb/E00421509</li>
-	<li></li>
+	<li>http://data.rbge.org.uk/herb/E00001237</li>
+	<li>http://data.rbge.org.uk/herb/E00010363</li>
 	<li>http://coldb.mnhn.fr/catalognumber/mnhn/p/p00084058</li>
+	<li>http://coldb.mnhn.fr/catalognumber/mnhn/p/p00689291</li>
+	<li>http://coldb.mnhn.fr/catalognumber/mnhn/p/p0000296</li>
+	<li>http://coldb.mnhn.fr/catalognumber/mnhn/p/p0000896</li>
 </ul>
 
 </body>
